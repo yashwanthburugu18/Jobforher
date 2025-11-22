@@ -91,7 +91,7 @@
           return;
         }
 
-        fetch('http://localhost:5000/register', {
+        fetch('https://jobforher.onrender.com/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -112,7 +112,7 @@
         const formData = new FormData(loginForm);
         const data = Object.fromEntries(formData.entries());
 
-        fetch('http://localhost:5000/login', {
+        fetch('https://jobforher.onrender.com/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
