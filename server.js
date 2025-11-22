@@ -8,7 +8,11 @@ const app = express();
 const PORT = 5000;
 
 
-app.use(cors());
+app.use(cors({
+    origin: "https://jobforher.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "frontend")));
 
