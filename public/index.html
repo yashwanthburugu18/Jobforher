@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOBFORHER - Empowering Women</title>
+  <style>
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background: linear-gradient(90deg, #6f2bdc, #ff4da6);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+    nav ul li a {
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 90vh;
+      background: linear-gradient(rgba(218, 212, 226, 0.6), rgba(5, 0, 3, 0.779)), url('https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fffdfd;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero .btn {
+      background: #bb4b83;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .hero .btn:hover {
+      background: #6f2bdc;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #6f2bdc;
+    }
+    section p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* ===== JOB SEARCH ===== */
+    .job-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .job-links a {
+      display: inline-block;
+      background: #6f2bdc;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .job-links a:hover {
+      background: #d9b8c8;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: linear-gradient(90deg, #dab6c8, #6f2bdc);
+      color: #fff;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .cta h3 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    .cta .btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cta a {
+      background: #fff;
+      color: #6f2bdc;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .cta a:hover {
+      background: #f1f1f1;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #6f2bdc;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      nav ul { display: none; }
+      nav .menu-toggle {
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+      nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #6f2bdc;
+        width: 200px;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">JOBFORHER</div>
+    <div class="menu-toggle">☰</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#jobs">Jobs</a></li>
+      <li><a href="loginpage.html">Register</a></li>
+      <li><a href="loginpage.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Empowering Women through Opportunities</h1>
+    <p>Your career, your growth, your platform.</p>
+    <a href="#cta" class="btn">Get Started</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Project</h2>
+    <p>
+      JOBFORHER is a platform dedicated to women where they can search and apply for jobs.  
+      It provides links to platforms like LinkedIn and Naukri where users can be redirected and apply directly.
+    </p>
+  </section>
+
+  <!-- JOB SEARCH -->
+  <section id="jobs">
+    <h2>Job Search</h2>
+    <p>Explore opportunities and apply through trusted platforms.</p>
+    <div class="job-links">
+      <a href="https://www.linkedin.com/jobs/" target="_blank">Apply via LinkedIn</a>
+      <a href="https://www.naukri.com/" target="_blank">Apply via Naukri</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="cta">
+    <h3>Create your profile and start your journey today!</h3>
+    <div class="btns">
+      <a href="loginpage.html">Register</a>
+      <a href="loginpage.html">Login</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © JOBFORHER 2025. All Rights Reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const nav = document.querySelector("nav");
+    const toggle = document.querySelector(".menu-toggle");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

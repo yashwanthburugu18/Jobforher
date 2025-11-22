@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobForHer - Work From Home Jobs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #6f2bdc;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    #logout-btn {
+      padding: 0.5rem 1rem;
+      background: #ff4da6;
+      border: none;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #logout-btn:hover {
+      background: #6f2bdc;
+    }
+    main {
+      padding: 2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f0f0f0;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>JobForHer - Work From Home Jobs</h1>
+      <p>Find the best jobs specially curated for women</p>
+    </div>
+    <button id="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section class="job-list" id="job-list">
+      <!-- Jobs will be injected here via JS -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 JobForHer | Empowering Women with Opportunities</p>
+  </footer>
+
+  <script>
+    // Logout button functionality
+    const logoutBtn = document.getElementById('logout-btn');
+    logoutBtn.addEventListener('click', () => {
+      // Optional: Clear any session storage / local storage
+      localStorage.clear(); // if you store user info in localStorage
+      sessionStorage.clear(); // if you store session info
+      // Redirect to login page
+      window.location.href = "index.html"; // replace with your login page URL
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
