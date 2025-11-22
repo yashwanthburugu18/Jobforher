@@ -3,6 +3,7 @@ const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path"); 
+require('dotenv').config()
 const app = express();
 const PORT = 5000;
 
@@ -13,11 +14,11 @@ app.use(express.static(path.join(__dirname, "frontend")));
 
 
 const db = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "23290-cs-049",
-  database: "jobforher"
+  host: process.env.host,
+  port: process.env.port,
+  user: process.env.user,
+  password: process.env.password,
+  database: process.env.database
 });
 
 db.connect(err => {
@@ -36,13 +37,13 @@ app.get("/", (req, res) => {
 
 // Register User
 app.post("/register", (req, res) => {
-  const { name, email, password, bio } = req.body;
-  const sql = "INSERT INTO users (name, email, password, bio) VALUES (?, ?, ?, ?)";
-  db.query(sql, [name, email, password, bio], (err) => {
+  const { name, email, password } = req.body;
+  const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+  db.query(sql, [name, email, password], (err) => {
     if (err) {
       return res.status(500).json({ success: false, message: "Error: " + err });
     }
-    res.json({ success: true, message: "Registered successfully!" });
+         res.json({ success: true, message: "Registered successfully!" });
   });
 });
 
