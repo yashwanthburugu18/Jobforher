@@ -9,13 +9,14 @@ const PORT = 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "frontend")));
 
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",       
-  password: "ammu@123",  
+  port: 3306,
+  user: "root",
+  password: "23290-cs-049",
   database: "jobforher"
 });
 
@@ -29,6 +30,7 @@ db.connect(err => {
 
 // Routes
 app.get("/", (req, res) => {
+  res.render('index.html')
   res.send("JOBFORHER Backend Running 🚀");
 });
 
