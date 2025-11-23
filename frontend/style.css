@@ -93,6 +93,11 @@ header p {
   background: #cc0066;
 }
 
+#result-msg{
+  color: rgb(9, 225, 9);
+}
+
+
 footer {
   background: #6a0dad;
   color: #fff;

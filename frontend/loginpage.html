@@ -36,7 +36,8 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit" class="submit-btn">Login</button>
-      <p class="switch-text">Don't have an account? <a id="show-register" href="#">Register</a></p>
+
+       <p class="switch-text">Don't have an account? <a id="show-register" href="#">Register</a></p>
     </form>
 
     <!-- REGISTER FORM -->
@@ -91,7 +92,7 @@
           return;
         }
 
-        fetch('https://jobforher.onrender.com/register', {
+        fetch('http://localhost:5000/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
@@ -99,7 +100,7 @@
         .then(res => res.json())
         .then(data => {
           alert(data.message);
-          if (data.success) showLoginForm();
+          if (data.message=="user already existited! please login" || data.message=="Signup Successfully") showLoginForm();
         })
         .catch((err)=>{
           console.log(err)
@@ -112,17 +113,23 @@
         const formData = new FormData(loginForm);
         const data = Object.fromEntries(formData.entries());
 
-        fetch('https://jobforher.onrender.com/login', {
+        fetch('http://localhost:5000/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         })
         .then(res => res.json())
         .then(data => {
-          console.log(data);
-          alert(data.success ? "Welcome, " + data.name : data.message);
-          if (data.success) {
-            window.location.href = "jobsdashboard.html"; // or any page you want
+          console.log(data.message);        
+          if (data.message=="login sucess") {
+            alert('Login Sucessfull..')
+            setTimeout(()=>{
+              window.location.href = "jobsdashboard.html"; // or any page you want
+
+            },1000)
+          }
+          else{
+            alert(data.message)
           }
         })
         .catch((err)=>{
